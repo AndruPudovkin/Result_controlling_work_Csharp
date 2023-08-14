@@ -8,7 +8,7 @@ string [] FillArray (string text)
     for(int i = 0; i<array.Length; i++)
     {
         System.Console.WriteLine($"Введите {i} элемент масива: ");
-        array[i] = Console.ReadLine();
+        array[i] = Console.ReadLine()!;
     } 
     return array;
 }
@@ -18,6 +18,34 @@ void PrinArray(string[] array)
         System.Console.WriteLine("[" + string.Join(", ",array)+ "]");
      
 }
-//
-string [] test = FillArray("введите длину масива :");
-PrinArray(test);
+string[] Function (string [] arrayFanction)
+{
+    int count = 0;
+    for (int i=0; i < arrayFanction.Length; i++)
+    {
+        if (arrayFanction[i].Length<=3)
+        {
+            count++;
+        }
+    } 
+    string [] newArray = new string [count];
+    int k = 0;
+    for (int j=0; j < arrayFanction.Length; j++)
+    {
+        for (int i=k; i < newArray.Length; i++)
+        {
+          if (arrayFanction[j].Length<=3 )
+          {
+            newArray[i] = arrayFanction[j];
+            k++;
+          }
+          break;
+        } 
+    } 
+ return newArray;
+}
+//---------------------------------------------------------------------------------------
+string [] array = FillArray("введите длину масива :");
+PrinArray(array);
+string [] newArray = Function(array);
+PrinArray(newArray);
