@@ -21,7 +21,7 @@ void PrinArray(string[] array)
 string[] Function (string [] arrayFanction)
 {
     int count = 0;
-    for (int i=0; i < arrayFanction.Length; i++)
+    for (int i=0; i < arrayFanction.Length; i++) // Определяем количество искомых строк для определения длинны нового массива 
     {
         if (arrayFanction[i].Length<=3)
         {
@@ -29,10 +29,10 @@ string[] Function (string [] arrayFanction)
         }
     } 
     string [] newArray = new string [count];
-    int k = 0;
-    for (int j=0; j < arrayFanction.Length; j++)
+    int k = 0; // данная переменная нужна чтобы перебор массива newArray начинался не с 0 
+    for (int j=0; j < arrayFanction.Length; j++) // заполняем масив 
     {
-        for (int i=k; i < newArray.Length; i++)
+        for (int i=k; i < newArray.Length; i++) 
         {
           if (arrayFanction[j].Length<=3 )
           {
